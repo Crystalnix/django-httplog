@@ -70,9 +70,8 @@ class CreatedFilter(SimpleListFilter):
 class LogAdmin(admin.ModelAdmin):
     form = EntryForm
     list_display = ('short_url', 'method', 'status_code', 'user', 'ip', 'app_name', 'created_at')
-    list_filter = ('app_name', 'status_code', 'method', UserFilter, CreatedFilter)
+    list_filter = ('app_name', 'status_code', 'method', CreatedFilter)
     search_fields = ('url', 'ip')
-    date_hierarchy = 'created_at'
     fieldsets = (
         (u'Main', {'fields': ('url', 'method', 'status_code')}),
         (u'Request', {'fields': ('request', 'data', 'response')}),
