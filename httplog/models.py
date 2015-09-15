@@ -47,7 +47,7 @@ class LogManager(models.Manager):
 class Entry(models.Model):
     url = models.URLField(db_index=True)
     method = models.CharField(max_length=6, db_index=True)
-    status_code = models.IntegerField('Code')
+    status_code = models.IntegerField('Code', db_index=True)
     in_headers = models.TextField(blank=True)
     out_headers = models.TextField(blank=True)
     ip = models.GenericIPAddressField(blank=True, null=True, db_index=True)
