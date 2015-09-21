@@ -69,7 +69,7 @@ class CreatedFilter(SimpleListFilter):
 
 class LogAdmin(admin.ModelAdmin):
     form = EntryForm
-    list_display = ('short_url', 'method', 'status_code', 'user', 'ip', 'app_name', 'created_at')
+    list_display = ('short_url', 'method', 'status_code', 'ip', 'app_name', 'created_at')
     list_filter = ('app_name', 'method', CreatedFilter)
     search_fields = ('url', 'ip')
     fieldsets = (
